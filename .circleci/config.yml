@@ -8,4 +8,11 @@ jobs:
       - run:
           gradle test
       - store_test_results:
+           path: .    
+      - run:
+          gradle jar
+      - store_test_results:
            path: .
+      - store_artifacts:
+            path: .
+            destination: prefix
